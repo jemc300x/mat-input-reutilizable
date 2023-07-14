@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <input matInput type="text" [formControl]="formControl" />
+  <button
+    *ngIf="formControl?.value"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="formControl.setValue('')"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
