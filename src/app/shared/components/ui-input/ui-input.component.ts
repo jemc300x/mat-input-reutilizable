@@ -8,6 +8,8 @@ import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 })
 export class UiInputComponent implements ControlValueAccessor, OnInit {
   @Input() label = '';
+  @Input() patterns = '';
+  @Input() errorMessage = '';
 
   formControl!: FormControl;
 

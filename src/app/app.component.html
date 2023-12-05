@@ -1,9 +1,23 @@
 <ui-input label="Name" [formControl]="formControl"></ui-input>
 
 <form [formGroup]="formGroup">
-  <ui-input label="Product Name" formControlName="productName"></ui-input>
-  <ui-input label="Product Code" formControlName="productCode"></ui-input>
+  <ui-input
+    label="Product Name"
+    formControlName="productName"
+    patterns="[0-9a-zA-Z-() ]"
+    [errorMessage]="errorMessage['productName']"
+  ></ui-input>
+  <ui-input
+    label="Product Code"
+    formControlName="productCode"
+    patterns="[0-9.,]"
+    [errorMessage]="errorMessage['productCode']"
+  ></ui-input>
   <ui-input label="Product Serial" formControlName="productSerial"></ui-input>
+
+  <button mat-button [disabled]="formGroup.invalid" (click)="onSave()">
+    Save
+  </button>
 </form>
 
 <!-- <form [formGroup]="formGroup">

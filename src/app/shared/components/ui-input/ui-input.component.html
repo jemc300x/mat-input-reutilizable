@@ -1,6 +1,11 @@
 <mat-form-field>
   <mat-label>{{ label }}</mat-label>
-  <input matInput type="text" [formControl]="formControl" />
+  <input
+    matInput
+    type="text"
+    [formControl]="formControl"
+    [allowPatterns]="patterns"
+  />
   <button
     *ngIf="formControl?.value"
     matSuffix
@@ -10,4 +15,6 @@
   >
     <mat-icon>close</mat-icon>
   </button>
+
+  <mat-error>{{ errorMessage }}</mat-error>
 </mat-form-field>

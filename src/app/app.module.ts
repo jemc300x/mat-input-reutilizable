@@ -8,9 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { UiInputComponent } from './shared/components/ui-input/ui-input.component';
+import { AllowPatternsDirective } from './directives/allow-patterns.directive';
 
 @NgModule({
-  declarations: [AppComponent, UiInputComponent],
+  declarations: [AppComponent, UiInputComponent, AllowPatternsDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
